@@ -13,9 +13,11 @@ This is a full-stack event booking application built with React, GraphQL, Node.j
 - MongoDB
 
 ## Features
+- Responsive and intuitive user interface
 - Event creation and management
 - Event booking and registration
-- Responsive and intuitive user interface
+- Viewing the current event list
+- Filter the event kust
 
 ## Getting Started
 To get started with the project, follow these steps:
