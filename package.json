@@ -1,0 +1,18 @@
+{
+  "name": "event-management-system",
+  "version": "1.0.0",
+  "description": "An event booking application built with React, GraphQL, Node.js, and MongoDB. It allows users to create and manage events, while also enabling other users to book these events. It leverages the power of GraphQL for efficient data retrieval and manipulation, and utilizes a modern tech stack to provide a seamless and responsive user experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
