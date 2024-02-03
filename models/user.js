@@ -9,9 +9,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  createEvents: [
+  createdEvents: [
     {
-      type: schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Event",
     },
   ],
