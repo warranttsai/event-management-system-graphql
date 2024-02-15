@@ -25,6 +25,6 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(3000);
+    app.listen(3001);
   })
   .catch((err) => console.log(err));
