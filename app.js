@@ -7,7 +7,10 @@ const graphQlSchema = require("./graphql/schema/index");
 const graphQlResolver = require("./graphql/resolver/index");
 
 const app = express();
-app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Server is running on port 3002");
+});
 
 app.use(
   "/graphql",
@@ -25,6 +28,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(3001);
+    app.listen(3002, () => {
+      console.log("Server is running on port 3002");
+    });
   })
   .catch((err) => console.log(err));
