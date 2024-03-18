@@ -5,12 +5,15 @@ const mongoose = require("mongoose");
 
 const graphQlSchema = require("./graphql/schema/index");
 const graphQlResolver = require("./graphql/resolver/index");
+const isAuth = require("./middleware/is-auth");
 
 const app = express();
 
 app.get("/", (req, res) => {
   res.send("Server is running on port 3002");
 });
+
+app.use(isAuth);
 
 app.use(
   "/graphql",
