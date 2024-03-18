@@ -1,5 +1,6 @@
 const { dateToString } = require("../../helpers/date");
 const Event = require("../../models/event");
+const User = require("../../models/user");
 const { transformEvent } = require("./merge");
 
 module.exports = {
@@ -15,13 +16,17 @@ module.exports = {
       });
   },
 
-  createEvent: (args) => {
+  createEvent: (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("Unauthenticated!");
+    }
+
     const event = new Event({
       title: args.eventInput.title,
       description: args.eventInput.description,
       price: +args.eventInput.price,
       date: dateToString(args.eventInput.date),
-      creator: "65bde3ac86d6d4ffdcebd88d",
+      creator: req.userId,
     });
 
     let createdEvent;
@@ -29,7 +34,7 @@ module.exports = {
       .save()
       .then((res) => {
         createdEvent = transformEvent(res);
-        return User.findById("65bde3ac86d6d4ffdcebd88d");
+        return User.findById(req.userId);
       })
       .then((user) => {
         if (!user) {
