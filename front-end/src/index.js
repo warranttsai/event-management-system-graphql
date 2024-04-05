@@ -1,12 +1,31 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+// css
 import "./index.css";
-import App from "./App";
+// pages
+import Auth from "./pages/Auth";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="/" element={<Navigate to="/auth" replace />} />
+      <Route path="*" element={<Navigate to="/auth" replace />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/events" element={null} />
+      <Route path="/bookings" element={null} />
+    </Route>
+  )
+);
 
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
