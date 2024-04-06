@@ -8,11 +8,13 @@ import {
   Navigate,
 } from "react-router-dom";
 // css
+import "foundation-sites/dist/css/foundation.min.css";
 import "./index.css";
 // pages
 import AuthPage from "./pages/AuthPage";
 import EventsPage from "./pages/EventsPage";
 import BookingsPage from "./pages/BookingsPage";
+import Header from "./ui/Header";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,7 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Header />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
