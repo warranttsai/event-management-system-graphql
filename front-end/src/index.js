@@ -10,16 +10,18 @@ import {
 // css
 import "./index.css";
 // pages
-import Auth from "./pages/Auth";
+import AuthPage from "./pages/AuthPage";
+import EventsPage from "./pages/EventsPage";
+import BookingsPage from "./pages/BookingsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Navigate to="/auth" replace />} />
       <Route path="*" element={<Navigate to="/auth" replace />} />
-      <Route path="/auth" element={<Auth />} />
-      <Route path="/events" element={null} />
-      <Route path="/bookings" element={null} />
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/events" element={<EventsPage />} />
+      <Route path="/bookings" element={<BookingsPage />} />
     </Route>
   )
 );
