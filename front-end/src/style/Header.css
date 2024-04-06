@@ -1,0 +1,4 @@
+.text-hover:hover {
+  color: #7f79d1;
+  transition: color 0.6s;
+}
